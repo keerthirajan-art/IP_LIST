@@ -18,7 +18,7 @@ jobs:
       - name: Sync IP List to Cloudflare
         uses: rezzell/cloudflare-ip-list-sync-action@main
         with:
-          file-path: 'lists/allowed-ips.txt' # Path to the file inside your repo
+          file-path: 'IP_LIST/IPLIST' # Path to the file inside your repo
           account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           list-name: 'ip_list1'
