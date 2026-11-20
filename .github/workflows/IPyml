@@ -1,0 +1,2 @@
+- name: Cloudflare IP List Sync
+  uses: rezzell/cloudflare-ip-list-sync-action@v0.1.1
