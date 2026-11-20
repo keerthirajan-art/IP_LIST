@@ -22,3 +22,4 @@ jobs:
           cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           cloudflare-list-id: ${{ secrets.CLOUDFLARE_GITHUB_HOOKS_LIST_ID }}
+          sources: '[{ "type": "url", "url": "https://raw.githubusercontent.com/keerthirajan-art/IP_LIST/refs/heads/main/IPLIST" }]'
