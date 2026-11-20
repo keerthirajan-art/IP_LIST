@@ -1,2 +1,24 @@
-- name: Cloudflare IP List Sync
-  uses: rezzell/cloudflare-ip-list-sync-action@v0.1.1
+name: Sync Repository IP List to Cloudflare
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'IP_LIST/IPLIST' # Triggers only when your IP file changes
+  workflow_dispatch:
+
+jobs:
+  sync-ips:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Sync IP List to Cloudflare
+        uses: rezzell/cloudflare-ip-list-sync-action@main
+        with:
+          file-path: 'lists/allowed-ips.txt' # Path to the file inside your repo
+          account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          list-name: 'ip_list1'
