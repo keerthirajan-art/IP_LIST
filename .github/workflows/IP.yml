@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'IP_LIST/IPLIST' # Triggers only when your IP file changes
+   
   workflow_dispatch:
 
 jobs:
